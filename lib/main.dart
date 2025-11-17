@@ -46,10 +46,10 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
 
   // Controllers for text fields
   final _weightController = TextEditingController();
-  final _heightCmController = TextEditingController(text: "170"); // Pre-fill for test case
+  final _heightCmController = TextEditingController(); // <-- FIX: Removed default text "170"
   final _heightMController = TextEditingController();
-  final _heightFtController = TextEditingController(text: "5"); // Pre-fill for test case
-  final _heightInController = TextEditingController(text: "7"); // Pre-fill for test case
+  final _heightFtController = TextEditingController(); // <-- FIX: Removed default text "5"
+  final _heightInController = TextEditingController(); // <-- FIX: Removed default text "7"
 
   // State variables for the result
   double _bmiResult = 0.0;
@@ -97,10 +97,10 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
     setState(() {
       _formKey.currentState?.reset(); // Reset validation state
       _weightController.clear();
-      _heightCmController.text = "170"; // Reset to default
+      _heightCmController.clear(); // <-- FIX: Changed from "170" to clear()
       _heightMController.clear();
-      _heightFtController.text = "5"; // Reset to default
-      _heightInController.text = "7"; // Reset to default
+      _heightFtController.clear(); // <-- FIX: Changed from "5" to clear()
+      _heightInController.clear(); // <-- FIX: Changed from "7" to clear()
 
       _weightUnit = WeightUnit.kg;
       _heightUnit = HeightUnit.cm;
