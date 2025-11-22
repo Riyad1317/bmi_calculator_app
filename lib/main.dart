@@ -483,7 +483,7 @@ class _BmiCalculatorPageState extends State<BmiCalculatorPage> {
     );
   }
 
-  // --- Helper: Get a message for the category
+  // --- Helper: Get a message for the category-
   String _getBmiMessage(String category) {
     switch (category) {
       case "Underweight":
